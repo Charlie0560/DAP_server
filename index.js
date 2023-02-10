@@ -39,8 +39,7 @@ app.use(
     credentials: true,
     origin: [
       "http://localhost:3000",
-      "http://192.168.65.34:3000",
-      "https://academic-passport.vercel.app",
+      "https://aesthetic-longma-3cb2e0.netlify.app",
     ],
   })
 );
