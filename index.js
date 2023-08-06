@@ -39,7 +39,7 @@ app.use(
     credentials: true,
     origin: [
       "http://localhost:3000",
-      "https://academic-passport.vercel.app",
+      "https://rad-douhua-72a20a.netlify.app/",
     ],
   })
 );
@@ -57,13 +57,6 @@ app.use("/api/batches", batchRoute);
 app.use("/api/teachers", teachersRoute);
 app.use("/api/extracurricular", extraCRoute);
 
-if ((process.env.NODE_ENV = "production")) {
-  const path = require("path");
-  app.get("*", (req, res) => {
-    app.use(express.static(path.join(__dirname, "./frontend/build")));
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  });
-}
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend is running!");
